@@ -64,10 +64,12 @@ public class test extends AppCompatActivity {
                     Response response = client.newCall(request).execute();
 
                     if (response.isSuccessful()){
-//                        txt.setText("Successful");
+                        txt.setText("Successful");
 
                         String resp = response.body().string();
-                        test.this.runOnUiThread(new Runnable() {
+
+                        mainHandler.postDelayed(new Runnable() {
+
                             @Override
                             public void run() {
                                 try {
@@ -97,7 +99,7 @@ public class test extends AppCompatActivity {
                                 }
                             }
 
-                        });
+                        },5000);
 
                     }
                     else{
@@ -184,11 +186,11 @@ public class test extends AppCompatActivity {
                                     JSONArray jsonArray = new JSONArray(jsonArrayString);
 
                                     // Accessing elements of the JSON array
-                                    String element1 = jsonArray.getString(0);
-                                    String element2 = jsonArray.getString(1);
-                                    String element3 = jsonArray.getString(2);
-                                    String element4 = jsonArray.getString(3);
-                                    String element5 = jsonArray.getString(4);
+//                                    String element1 = jsonArray.getString(0);
+//                                    String element2 = jsonArray.getString(1);
+//                                    String element3 = jsonArray.getString(2);
+//                                    String element4 = jsonArray.getString(3);
+//                                    String element5 = jsonArray.getString(4);
 //                                    JSONArray jarrDiseases = jsonObject.getJSONArray("SuggestedFeatures");
 
 //                                    for (int i = 0; i < jarrDiseases.length(); i++) {
@@ -201,11 +203,11 @@ public class test extends AppCompatActivity {
 //                                            @Override
 //                                            public void run() {
 ////                                            TextView textView = findViewById(R.id.textViw3);
-                                                suggested_feature.append("Disease " + element1 +"\n"+"\n");
-                                                suggested_feature.append("Disease " + element2 +"\n"+"\n");
-                                                suggested_feature.append("Disease " + element3 +"\n"+"\n");
-                                                suggested_feature.append("Disease " + element4 +"\n"+"\n");
-                                                suggested_feature.append("Disease " + element5 +"\n"+"\n");
+//                                                suggested_feature.append("Disease " + element1 +"\n"+"\n");
+//                                                suggested_feature.append("Disease " + element2 +"\n"+"\n");
+//                                                suggested_feature.append("Disease " + element3 +"\n"+"\n");
+//                                                suggested_feature.append("Disease " + element4 +"\n"+"\n");
+//                                                suggested_feature.append("Disease " + element5 +"\n"+"\n");
 //                                            }
 //                                        });
 //                                    }
@@ -226,13 +228,8 @@ public class test extends AppCompatActivity {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-
-
             }
         });
 
-
     }
-
-
 }

@@ -1,9 +1,5 @@
 package com.example.med_assist;
 
-import static android.content.Intent.getIntent;
-import static android.content.Intent.getIntentOld;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -153,8 +149,13 @@ public class frag_joint extends Fragment {
                 }
 
                 String selectedItem = parent.getItemAtPosition(i).toString();
-
-                myFunction("3", "BoneLocPain");
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                }
+                myFunction(value, "LocPain");
 
                 // Perform actions based on the selected item
 
@@ -163,7 +164,7 @@ public class frag_joint extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-                Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "false", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -181,8 +182,14 @@ public class frag_joint extends Fragment {
                 }
 
                 String selectedItem = parent.getItemAtPosition(i).toString();
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                }
 
-                    myFunction("3", "JointsPain");
+                    myFunction(value, "JointsPain");
             }
 
             @Override
@@ -205,7 +212,14 @@ public class frag_joint extends Fragment {
 
                 String selectedItem = parent.getItemAtPosition(i).toString();
 
-                myFunction(selectedItem, "BoneGenPain");
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                }
+
+                myFunction(value, "BoneGenPain");
 
             }
 
@@ -228,8 +242,13 @@ public class frag_joint extends Fragment {
                 }
 
                 String selectedItem = parent.getItemAtPosition(i).toString();
-
-                myFunction(selectedItem, "MuscleGenPain");
+                String value = "2";
+                if(selectedItem == "0"){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                }
+                myFunction(value, "MuscleGenPain");
 
             }
 
@@ -251,8 +270,18 @@ public class frag_joint extends Fragment {
                 }
 
                 String selectedItem = parent.getItemAtPosition(i).toString();
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "6";
+                } else if (selectedItem.equals("3")) {
+                    value = "4";
+                }else if (selectedItem.equals("4")) {
+                    value = "5";
+                }
 
-                myFunction(selectedItem, "GoutyRosPain");
+                myFunction(value, "GoutyRosPain");
 
             }
 
@@ -273,9 +302,19 @@ public class frag_joint extends Fragment {
                     return; // Skip the first selection
                 }
                 String selectedItem = parent.getItemAtPosition(i).toString();
-
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "3";
+                } else if (selectedItem.equals("1")) {
+                    value = "4";
+                } else if (selectedItem.equals("2")) {
+                    value = "5";
+                }else if (selectedItem.equals("3")) {
+                    value = "6";
+                }else if (selectedItem.equals("4")) {
+                    value = "7";
+                }
                 myFunction(selectedItem, "GoutyRosPainProgression");
-
 
             }
 
@@ -296,10 +335,13 @@ public class frag_joint extends Fragment {
                     return; // Skip the first selection
                 }
                 String selectedItem = parent.getItemAtPosition(i).toString();
-
-                myFunction(selectedItem, "SpinePain");
-
-
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                }
+                myFunction(value, "SpinePain");
             }
 
             @Override
@@ -319,8 +361,19 @@ public class frag_joint extends Fragment {
                     return; // Skip the first selection
                 }
                 String selectedItem = parent.getItemAtPosition(i).toString();
-
-                myFunction(selectedItem, "TraumaToToesWithNoSkinBrake");
+                String value = "2";
+                if(selectedItem.equals("0")){
+                    value = "2";
+                } else if (selectedItem.equals("1")) {
+                    value = "3";
+                } else if (selectedItem.equals("2")) {
+                    value = "4";
+                }else if (selectedItem.equals("3")) {
+                    value = "5";
+                } else if (selectedItem.equals("4")) {
+                    value = "6";
+                }
+                myFunction(value, "RestingPainInLowerExtremities");
 
             }
 

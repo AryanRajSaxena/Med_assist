@@ -1,7 +1,5 @@
 package com.example.med_assist;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +14,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,7 +27,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.http1.HeadersReader;
 
 public class feature extends AppCompatActivity {
 
@@ -52,6 +51,7 @@ public class feature extends AppCompatActivity {
             "Vomiting"
 
     };
+    private static String BASE_URL = "http://api.endlessmedical.com/v1/dx";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -362,9 +362,6 @@ public class feature extends AppCompatActivity {
 
         });
 
-
-
-
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -423,17 +420,57 @@ public class feature extends AppCompatActivity {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+                //Cough
+
+//                String valueJoint = temperature.getText().toString();
 //            test
 
 //                Intent intent = new Intent(feature.this,test.class);
 //                intent.putExtra("id", sessionID);
 //                startActivity(intent);
-
-
             }
 
         });
 
+//        generate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                class Sample1 {
+//
+//                    public void run() {
+//                        OkHttpClient client = new OkHttpClient();
+//
+//                        try {
+//
+//                            int iAge = new Random().nextInt(100 - 18) + 18;
+//                            int iGender = new Random().nextDouble() < 0.5 ? 2 : 3; // 2 - Male, 3 - Female
+//
+//                            String updateAgeUrl = String.format(BASE_URL + "/UpdateFeature?SessionID=%s&name=Age&value=%d", sessionID, iAge);
+//                            String updateGenderUrl = String.format(BASE_URL + "/UpdateFeature?SessionID=%s&name=Gender&value=%d", sessionID, iGender);
+//                            String updateCoughUrl = String.format(BASE_URL + "/UpdateFeature?SessionID=%s&name=SeverityCough&value=%s", sessionID, "4");
+//                            String updateTempUrl = String.format(BASE_URL + "/UpdateFeature?SessionID=%s&name=Temp&value=%s", sessionID, "103.4");
+//
+//                            client.newCall(new Request.Builder().url(updateAgeUrl).post(RequestBody.create("", MediaType.parse("application/json"))).build()).execute();
+//                            client.newCall(new Request.Builder().url(updateGenderUrl).post(RequestBody.create("", MediaType.parse("application/json"))).build()).execute();
+//                            client.newCall(new Request.Builder().url(updateCoughUrl).post(RequestBody.create("", MediaType.parse("application/json"))).build()).execute();
+//                            client.newCall(new Request.Builder().url(updateTempUrl).post(RequestBody.create("", MediaType.parse("application/json"))).build()).execute();
+//
+//                            Toast.makeText(feature.this, "Done", Toast.LENGTH_SHORT).show();
+//                        } catch (IOException e) {
+////                            e.printStackTrace();
+//                            Toast.makeText(feature.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//
+//                    public void main(String[] args) {
+//                        Sample1 sample = new Sample1();
+//                        sample.run();
+//                    }
+//                }
+//
+//            }
+//        });
 
         transfer.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -220,7 +220,7 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="Hoarseness : "
+                android:text="Has your voice been hoarse recently? : "
                 android:textSize="15sp"
                 />
 
